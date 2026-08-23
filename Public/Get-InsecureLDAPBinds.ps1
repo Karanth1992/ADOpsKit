@@ -53,7 +53,7 @@ function Get-InsecureLDAPBinds {
     $since      = (Get-Date).AddHours(-$Hours)
 
     if (-not (Test-Path -LiteralPath $OutputPath)) {
-        New-Item -ItemType Directory -Path $OutputPath | Out-Null
+        New-Item -ItemType Directory -LiteralPath $OutputPath | Out-Null
     }
 
     $DomainControllers    = Get-ADDomainController -Filter *

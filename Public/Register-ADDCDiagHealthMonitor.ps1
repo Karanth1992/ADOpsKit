@@ -208,7 +208,7 @@ function Register-ADDCDiagHealthMonitor {
 
     if (-not (Test-Path -LiteralPath $ScriptsFolder)) {
         if ($PSCmdlet.ShouldProcess($ScriptsFolder, 'Create scripts folder')) {
-            New-Item -ItemType Directory -Path $ScriptsFolder -Force | Out-Null
+            New-Item -ItemType Directory -LiteralPath $ScriptsFolder -Force | Out-Null
         }
     }
 

@@ -424,7 +424,7 @@ function Invoke-ADRealtimeHeartbeat {
         )
 
         if (-not (Test-Path -LiteralPath $Path)) {
-            New-Item -Path $Path -ItemType Directory -Force | Out-Null
+            New-Item -LiteralPath $Path -ItemType Directory -Force | Out-Null
         }
     }
 

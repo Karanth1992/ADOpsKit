@@ -337,7 +337,7 @@ namespace ADOpsKitInternal {
 
         $logFile = Join-Path $BasePath "Logs\$TaskName.log"
         $logDir  = Split-Path $logFile
-        if (-not (Test-Path -LiteralPath $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
+        if (-not (Test-Path -LiteralPath $logDir)) { New-Item -ItemType Directory -LiteralPath $logDir -Force | Out-Null }
 
         $sqLog       = ConvertTo-EscapedLiteral $logFile
         $sqReportDir = ConvertTo-EscapedLiteral (Join-Path $BasePath $TaskName)
@@ -419,7 +419,7 @@ $credLine
 
         # Write script to a .ps1 file - avoids all escaping issues with -Command
         $scriptDir  = Join-Path $BasePath 'Scripts'
-        if (-not (Test-Path -LiteralPath $scriptDir)) { New-Item -ItemType Directory -Path $scriptDir -Force | Out-Null }
+        if (-not (Test-Path -LiteralPath $scriptDir)) { New-Item -ItemType Directory -LiteralPath $scriptDir -Force | Out-Null }
         $scriptFile = Join-Path $scriptDir "$TaskName.ps1"
 
         $fullScript = @"
@@ -822,7 +822,7 @@ exit `$exitCode
 
     if (-not (Test-Path -LiteralPath $OutputBasePath)) {
         if ($PSCmdlet.ShouldProcess($OutputBasePath, 'Create output base folder')) {
-            New-Item -ItemType Directory -Path $OutputBasePath -Force | Out-Null
+            New-Item -ItemType Directory -LiteralPath $OutputBasePath -Force | Out-Null
         }
     }
 
@@ -831,7 +831,7 @@ exit `$exitCode
     $scriptDir = Join-Path $OutputBasePath 'Scripts'
     if (-not (Test-Path -LiteralPath $scriptDir)) {
         if ($PSCmdlet.ShouldProcess($scriptDir, 'Create Scripts folder')) {
-            New-Item -ItemType Directory -Path $scriptDir -Force | Out-Null
+            New-Item -ItemType Directory -LiteralPath $scriptDir -Force | Out-Null
         }
     }
     if ($PSCmdlet.ShouldProcess($scriptDir, 'Restrict permissions to SYSTEM, Administrators and the service account')) {

@@ -802,7 +802,7 @@ $svgDiagram
 
     $outputDir = Split-Path -LiteralPath $OutputPath
     if (-not (Test-Path -LiteralPath $outputDir)) {
-        New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
+        New-Item -ItemType Directory -LiteralPath $outputDir -Force | Out-Null
     }
 
     $outputFile = $OutputPath

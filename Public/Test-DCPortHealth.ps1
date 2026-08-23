@@ -127,7 +127,7 @@ function Test-DCPortHealth {
 
     if ($ExportPath -ne "") {
         $exportDir = Split-Path -LiteralPath $ExportPath
-        if ($exportDir -and -not (Test-Path -LiteralPath $exportDir)) { New-Item -ItemType Directory -Path $exportDir -Force | Out-Null }
+        if ($exportDir -and -not (Test-Path -LiteralPath $exportDir)) { New-Item -ItemType Directory -LiteralPath $exportDir -Force | Out-Null }
         $results | Sort-Object DomainController, Port |
             Export-Csv -LiteralPath $ExportPath -NoTypeInformation
         Write-Host "Full results exported to $ExportPath" -ForegroundColor Green

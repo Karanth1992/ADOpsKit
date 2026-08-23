@@ -105,7 +105,7 @@ function Get-AccountLockoutReport {
 
     # ============ FILE PATHS ============
 
-    if (-not (Test-Path -LiteralPath $TempPath)) { New-Item -ItemType Directory -Path $TempPath -Force | Out-Null }
+    if (-not (Test-Path -LiteralPath $TempPath)) { New-Item -ItemType Directory -LiteralPath $TempPath -Force | Out-Null }
 
     $datePrefix      = Get-Date -Format 'yyyy-MM-dd'
     $fileLockList    = "$TempPath\${datePrefix}_List_of_locked_users.txt"
