@@ -358,7 +358,7 @@ function Get-ADForestHealth {
 
     # ========== OUTPUT ==========
 
-    if (-not (Test-Path -LiteralPath $OutputFolder)) { New-Item -Path $OutputFolder -ItemType Directory -Force | Out-Null }
+    if (-not (Test-Path -LiteralPath $OutputFolder)) { New-Item -LiteralPath $OutputFolder -ItemType Directory -Force | Out-Null }
     $htmlBody | Out-File -LiteralPath $outFile -Encoding UTF8
     Write-Host "Report written to: $outFile" -ForegroundColor Green
 

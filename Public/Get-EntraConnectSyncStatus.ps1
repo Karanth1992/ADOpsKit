@@ -225,7 +225,7 @@ function Get-EntraConnectSyncStatus {
 
     if ($ExportPath -ne "") {
         $exportDir = Split-Path -LiteralPath $ExportPath
-        if ($exportDir -and -not (Test-Path -LiteralPath $exportDir)) { New-Item -ItemType Directory -Path $exportDir -Force | Out-Null }
+        if ($exportDir -and -not (Test-Path -LiteralPath $exportDir)) { New-Item -ItemType Directory -LiteralPath $exportDir -Force | Out-Null }
         $result.Connectors | Export-Csv -NoTypeInformation -LiteralPath $ExportPath
         Write-Host "`nConnector stats exported to $ExportPath" -ForegroundColor Green
     }

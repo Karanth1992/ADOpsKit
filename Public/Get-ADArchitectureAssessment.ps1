@@ -674,7 +674,7 @@ function Get-ADArchitectureAssessment {
     $timestamp = $runStarted.ToString('yyyyMMdd_HHmmss')
     $runFolder = Join-Path $OutputFolder ("ADArchitectureAssessment_{0}" -f $timestamp)
 
-    New-Item -Path $runFolder -ItemType Directory -Force | Out-Null
+    New-Item -LiteralPath $runFolder -ItemType Directory -Force | Out-Null
 
     Write-Step ("Script version {0}" -f $script:ScriptVersion)
     if ($PSCommandPath) {

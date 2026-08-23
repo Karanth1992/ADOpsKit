@@ -264,7 +264,7 @@ function Test-ADDCDiagHealth {
 
     $stateDir = Split-Path -Path $StateFilePath -Parent
     if ($stateDir -and -not (Test-Path -LiteralPath $stateDir)) {
-        New-Item -ItemType Directory -Path $stateDir -Force | Out-Null
+        New-Item -ItemType Directory -LiteralPath $stateDir -Force | Out-Null
     }
 
     $previousState = @{}
@@ -475,7 +475,7 @@ $($rowsHtml -join "`n")
 
         $logDir = Split-Path -Path $AlertLogPath -Parent
         if ($logDir -and -not (Test-Path -LiteralPath $logDir)) {
-            New-Item -ItemType Directory -Path $logDir -Force | Out-Null
+            New-Item -ItemType Directory -LiteralPath $logDir -Force | Out-Null
         }
         $alertItems | ForEach-Object {
             [PSCustomObject]@{

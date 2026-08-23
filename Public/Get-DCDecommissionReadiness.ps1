@@ -126,7 +126,7 @@
     $Results    = [ordered]@{}   # Accumulates all findings
 
     if (-not (Test-Path -LiteralPath $OutputPath)) {
-        New-Item -ItemType Directory -Path $OutputPath -Force | Out-Null
+        New-Item -ItemType Directory -LiteralPath $OutputPath -Force | Out-Null
     }
 
     Write-Host "`n  DC Pre-Decommission Readiness Scanner" -ForegroundColor Magenta

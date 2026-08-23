@@ -656,7 +656,7 @@ function Get-GPOInventoryWithSettings {
             # [xml] cast meant that one case never wrote the file.
             if (-not [string]::IsNullOrWhiteSpace($SaveXmlFolder)) {
                 if (-not (Test-Path -LiteralPath $SaveXmlFolder)) {
-                    New-Item -ItemType Directory -Path $SaveXmlFolder -Force | Out-Null
+                    New-Item -ItemType Directory -LiteralPath $SaveXmlFolder -Force | Out-Null
                 }
 
                 $fileBaseName = if ([string]::IsNullOrWhiteSpace($GpoName)) {
@@ -667,7 +667,7 @@ function Get-GPOInventoryWithSettings {
                 }
 
                 $xmlPath = Join-Path -Path $SaveXmlFolder -ChildPath "$fileBaseName.xml"
-                $reportXmlText | Out-File -FilePath $xmlPath -Encoding UTF8
+                $reportXmlText | Out-File -LiteralPath $xmlPath -Encoding UTF8
             }
 
             [xml]$reportXml = $reportXmlText
@@ -971,7 +971,7 @@ tr:hover td { background:#eaf0fa; }
     $outputFolder = Split-Path -Path $OutputPath -Parent
 
     if (-not [string]::IsNullOrWhiteSpace($outputFolder) -and -not (Test-Path -LiteralPath $outputFolder)) {
-        New-Item -ItemType Directory -Path $outputFolder -Force | Out-Null
+        New-Item -ItemType Directory -LiteralPath $outputFolder -Force | Out-Null
     }
 
     $inventory |
@@ -983,7 +983,7 @@ tr:hover td { background:#eaf0fa; }
                       ConfiguredSettingsCount, ConfiguredSettings `
             -Head $htmlHead `
             -Body $htmlBody |
-        Out-File -FilePath $OutputPath -Encoding UTF8
+        Out-File -LiteralPath $OutputPath -Encoding UTF8
 
     Write-Host "Report written to $OutputPath" -ForegroundColor Green
     Write-Host "$($inventory.Count) GPO(s) inventoried." -ForegroundColor Cyan

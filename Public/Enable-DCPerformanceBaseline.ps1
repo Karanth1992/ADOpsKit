@@ -58,7 +58,7 @@ $result = [ordered]@{
 
 try {
     if (-not (Test-Path -LiteralPath $logFolder)) {
-        New-Item -ItemType Directory -Path $logFolder -Force | Out-Null
+        New-Item -ItemType Directory -LiteralPath $logFolder -Force | Out-Null
     }
     $result.FolderReady = $true
 
@@ -112,7 +112,7 @@ finally {
                 Remove-Item -LiteralPath $uncResultPath -Force -ErrorAction SilentlyContinue
             }
             if (-not (Test-Path -LiteralPath $uncLogFolder)) {
-                New-Item -ItemType Directory -Path $uncLogFolder -Force | Out-Null
+                New-Item -ItemType Directory -LiteralPath $uncLogFolder -Force | Out-Null
             }
             Set-Content -LiteralPath $uncScriptPath -Value $deployScriptContent -Encoding UTF8 -Force
 
