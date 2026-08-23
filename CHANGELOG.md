@@ -11,6 +11,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## ADOpsKit Module
 
+### [1.5.1] – 2026-08-23
+
+#### Changed
+- Converted every remaining `New-Item` and `Out-File` call using `-Path` (or a bare positional path) to `-LiteralPath`, completing the `-LiteralPath` consistency pass started in 1.5.0. Covers 14 files: `Enable-DCPerformanceBaseline.ps1`, `Get-ADArchitectureAssessment.ps1`, `Get-ADForestHealth.ps1`, `Get-ADReplicationTopologyDiagram.ps1`, `Get-AccountLockoutReport.ps1`, `Get-DCDecommissionReadiness.ps1`, `Get-EntraConnectSyncStatus.ps1`, `Get-GPOInventoryWithSettings.ps1`, `Get-InsecureLDAPBinds.ps1`, `Invoke-ADRealtimeHeartbeat.ps1`, `Register-ADDCDiagHealthMonitor.ps1`, `Register-ADOpsKitScheduledTasks.ps1`, `Test-ADDCDiagHealth.ps1`, `Test-DCPortHealth.ps1`. No functional or behavioral changes.
+
 ### [1.5.0] – 2026-07-21
 
 #### Security
