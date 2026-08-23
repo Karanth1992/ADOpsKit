@@ -64,7 +64,7 @@ Invoke-Pester -Configuration $config
 
 ```powershell
 Install-Module PSScriptAnalyzer -Scope CurrentUser
-Invoke-ScriptAnalyzer -Path ./Public,./Private -Recurse -Severity Warning,Error -Settings .pssa.psd1
+'./Public', './Private' | ForEach-Object { Invoke-ScriptAnalyzer -Path $_ -Recurse -Severity Warning,Error -Settings .pssa.psd1 }
 ```
 
 CI runs both PSScriptAnalyzer and Pester (`Integration` tag excluded) on every

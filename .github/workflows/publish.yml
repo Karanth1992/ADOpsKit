@@ -40,8 +40,9 @@ jobs:
         shell: pwsh
         run: |
           Install-Module PSScriptAnalyzer -Force -Scope CurrentUser
-          $paths = @('./Public', './Private')
-          $results = Invoke-ScriptAnalyzer -Path $paths -Recurse -Severity Warning,Error -Settings .pssa.psd1
+          $results = @('./Public', './Private') | ForEach-Object {
+            Invoke-ScriptAnalyzer -Path $_ -Recurse -Severity Warning,Error -Settings .pssa.psd1
+          }
           if ($results) {
             $results | Format-Table -AutoSize
             exit 1

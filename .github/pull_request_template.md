@@ -4,7 +4,7 @@
 
 ## Checklist
 
-- [ ] `Invoke-ScriptAnalyzer -Path ./Public,./Private -Recurse -Severity Warning,Error -Settings .pssa.psd1` is clean
+- [ ] `Invoke-ScriptAnalyzer` is clean for both `Public/` and `Private/` (see CONTRIBUTING.md for the command)
 - [ ] Pester tests added/updated for any new or changed public function, and pass with `-ExcludeTag Integration`
 - [ ] Comment-based help updated (`.SYNOPSIS`, `.PARAMETER`, `.EXAMPLE`, `.NOTES`) if parameters or behavior changed
 - [ ] `CHANGELOG.md` entry added under `## ADOpsKit Module` if this is user-visible
