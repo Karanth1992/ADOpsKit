@@ -105,5 +105,5 @@ REQUIREMENTS
 
 LINKS
     PowerShell Gallery : https://www.powershellgallery.com/packages/ADOpsKit
-    GitHub             : https://github.com/Karanth1992/powershell-scripts
+    GitHub             : https://github.com/Karanth1992/ADOpsKit
     Author site        : https://karanth.ovh

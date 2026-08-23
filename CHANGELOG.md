@@ -11,6 +11,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## ADOpsKit Module
 
+### [1.5.2] – 2026-08-23
+
+#### Fixed
+- `ADOpsKit.psd1` — `LicenseUri` and `ProjectUri` pointed at the companion `powershell-scripts` repository instead of this one. Both now point at `github.com/Karanth1992/ADOpsKit`, which holds this module's own `LICENSE` and source. The same wrong-repo link was also fixed in `en-US/about_ADOpsKit.help.txt` and `ADOpsKit-Usage-Guide.html`.
+
 ### [1.5.1] – 2026-08-23
 
 #### Changed

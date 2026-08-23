@@ -11,7 +11,7 @@
 RootModule = 'ADOpsKit.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.5.1'
+ModuleVersion = '1.5.2'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -112,16 +112,16 @@ PrivateData = @{
         Tags = @('ActiveDirectory','AD','EntraID','AzureAD','GPO','Replication','HealthCheck','Audit','Inventory','DomainController','LDAP','HTML','Report','repadmin')
 
         # A URL to the license for this module.
-        LicenseUri = 'https://github.com/Karanth1992/powershell-scripts/blob/main/LICENSE'
+        LicenseUri = 'https://github.com/Karanth1992/ADOpsKit/blob/main/LICENSE'
 
         # A URL to the main website for this project.
-        ProjectUri = 'https://github.com/Karanth1992/powershell-scripts'
+        ProjectUri = 'https://github.com/Karanth1992/ADOpsKit'
 
         # A URL to an icon representing this module.
         # IconUri = ''
 
         # ReleaseNotes of this module
-        ReleaseNotes = 'v1.5.1 - Consistency/reliability follow-up. Converts every remaining New-Item and Out-File call in the module from -Path (or a bare positional path) to -LiteralPath, completing the -LiteralPath consistency pass started in 1.5.0 across 14 files. No functional or behavioral changes - path handling is now uniformly wildcard-safe throughout the module.'
+        ReleaseNotes = 'v1.5.2 - Metadata fix. LicenseUri and ProjectUri in the module manifest incorrectly pointed at the companion powershell-scripts repository instead of this one; both now point at github.com/Karanth1992/ADOpsKit, which holds this module''s own LICENSE and source. The same wrong-repo link was also fixed in the about_ADOpsKit help topic and the usage guide. No functional module changes.'
 
     } # End of PSData hashtable
 
